@@ -9,11 +9,15 @@ class Autocomplete extends React.Component {
 
   state = {
     value: '',
-  }
+  };
+
+  requestTimer = null;
 
   onChange = (e, value) => {
-      this.setState({ value });
-      this.props.getAutocomplete(value);
+      this.setState({ value }, () => {
+        clearTimeout(this.requestTimer)
+        this.requestTimer = setTimeout(() => this.props.getAutocomplete(value), 500);
+      });
   };
 
   onSelect = (value) => this.setState({ value });
