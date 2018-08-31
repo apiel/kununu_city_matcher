@@ -1,52 +1,37 @@
 import React from 'react';
-import ReactAutocomplete from 'react-autocomplete';
-import classNames from 'classnames';
-import { connect } from 'react-redux';
 
-import { getAutocomplete } from '../../modules/autocomplete';
+import AutocompleteContainer from './autocompleteContainer';
 
 class Autocomplete extends React.Component {
 
   state = {
     value: '',
+    active: false,
   };
 
   requestTimer = null;
 
-  onChange = (e, value) => {
-      this.setState({ value }, () => {
-        clearTimeout(this.requestTimer)
-        this.requestTimer = setTimeout(() => this.props.getAutocomplete(value), 500);
-      });
+  onChange = (value, callback) => {
+      this.setState({ value }, callback);
   };
 
   onSelect = (value) => this.setState({ value });
-  getItemValue = (item) => item.name;
+  onFocus = () => this.setState({ active: true });
+  onBlur = () => this.setState({ active: false });
 
   render() {
-    const { items } = this.props;  
-    return (
-        <ReactAutocomplete
-            getItemValue={this.getItemValue}
-            items={ items }
-            renderItem={(item, isHighlighted) =>
-                <div key={item.id} className={ classNames(isHighlighted && 'highlighted') }>
-                    { item.name }
-                </div>
-            }
-            value={this.state.value}
+    return this.state.active ? (<AutocompleteContainer 
+            value={ this.state.value }
             onChange={ this.onChange }
-            onSelect={ this.onSelect }  
-        />
-    );
+            onSelect={ this.onSelect }
+            onBlur={ this.onBlur }
+        />) : (<input 
+            onFocus={ this.onFocus }
+            value={ this.state.value }
+            onChange={() => {}}
+            style={{background: '#eee'}}
+        />);
   }
 }
 
-const mapStateToProps = ({ autocomplete }) => ({
-    items: autocomplete.data,
-  });
-  
-  export default connect(
-    mapStateToProps,
-    { getAutocomplete }
-  )(Autocomplete);
+export default Autocomplete;

@@ -12,7 +12,7 @@ const City = ({ cities, fetching }) => (
   </div>
 );
 
-const mapStateToProps = ({ cities }) => ({
+const mapStateToProps = ({ cities, autocomplete }) => ({
   cities: cities.data,
   fetching: cities.fetching,
   // need to handle error
