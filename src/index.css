@@ -14,3 +14,15 @@ body {
 button:disabled {
   opacity: 0.5;
 }
+
+.row {
+  display: flex;
+}
+
+.column {
+  flex: 50%;
+}
+
+.highlighted {
+  background: lightgray;
+}
