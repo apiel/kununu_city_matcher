@@ -6,7 +6,7 @@ const Row = ({ id, name }) => (
     <div className='row'>
         <div className='column'>({ id }) { name }</div>
         <div className='column'>
-            <Autocomplete />        
+            <Autocomplete />
         </div>
     </div>
 );

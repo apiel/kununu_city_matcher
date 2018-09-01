@@ -37,7 +37,7 @@ class AutocompleteContainer extends React.Component {
   getItems = () => this.props.value ? this.props.items : [];
 
   render() {
-    const { value, onSelect, onBlur } = this.props;  
+    const { value, onSelect, onBlur } = this.props;
     return (
         <ReactAutocomplete
             getItemValue={this.getItemValue}

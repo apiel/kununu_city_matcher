@@ -11,10 +11,6 @@ body {
   line-height: 1.5;
 }
 
-button:disabled {
-  opacity: 0.5;
-}
-
 .row {
   display: flex;
 }

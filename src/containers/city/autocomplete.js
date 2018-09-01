@@ -20,13 +20,13 @@ class Autocomplete extends React.Component {
   onFocus = () => this.setState({ active: true });
   onBlur = () => this.setState({ active: false });
 
-  getInput = () => 
-        this.state.active ? (<AutocompleteContainer 
+  getInput = () =>
+        this.state.active ? (<AutocompleteContainer
             value={ this.state.value }
             onChange={ this.onChange }
             onSelect={ this.onSelect }
             onBlur={ this.onBlur }
-        />) : (<input 
+        />) : (<input
             onFocus={ this.onFocus }
             value={ this.state.value }
             onChange={() => {}}

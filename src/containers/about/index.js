@@ -3,7 +3,9 @@ import React from 'react'
 const About = () => (
   <div>
     <h1>About Page</h1>
-    <p>Did you get here via Redux?</p>
+    <p>Alexandre Piel</p>
+    <p>Senior developer / Software architecth</p>
+    <p><a href="https://github.com/apiel">Github</a></p>
   </div>
 )
 
