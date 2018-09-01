@@ -12,8 +12,7 @@ then open url http://localhost:9001/
 Run testcafe (visual mode): `yarn testcafe-debug`
 
 Run testcafe (headless mode): `yarn testcafe`
-> *Don't forget to start the app first*
-> *The setting are for chrome but it can also work with other browsers like chromium, firefox...*
+> *Don't forget to start the app first. The setting are for chrome but it can also work with other browsers like chromium, firefox...*
 
 I would have like to have:
 
