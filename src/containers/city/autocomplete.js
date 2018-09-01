@@ -7,6 +7,7 @@ class Autocomplete extends React.Component {
   state = {
     value: '',
     active: false,
+    selectedId: null,
   };
 
   requestTimer = null;
@@ -15,12 +16,12 @@ class Autocomplete extends React.Component {
       this.setState({ value }, callback);
   };
 
-  onSelect = (value) => this.setState({ value });
+  onSelect = (value, item) => this.setState({ value, selectedId: item.id });
   onFocus = () => this.setState({ active: true });
   onBlur = () => this.setState({ active: false });
 
-  render() {
-    return this.state.active ? (<AutocompleteContainer 
+  getInput = () => 
+        this.state.active ? (<AutocompleteContainer 
             value={ this.state.value }
             onChange={ this.onChange }
             onSelect={ this.onSelect }
@@ -30,6 +31,13 @@ class Autocomplete extends React.Component {
             value={ this.state.value }
             onChange={() => {}}
         />);
+
+  getId = () => this.state.selectedId && `(${this.state.selectedId})`;
+
+  render() {
+    return (<div>
+        { this.getInput() } { this.getId() }
+    </div>);
   }
 }
 
