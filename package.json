@@ -5,12 +5,14 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "storybook": "start-storybook -p 9001"
   },
   "devDependencies": {
     "react-scripts": "1.1.5"
   },
   "dependencies": {
+    "@storybook/react": "^3.4.10",
     "axios": "^0.18.0",
     "classnames": "^2.2.6",
     "connected-react-router": "4.4.1",
