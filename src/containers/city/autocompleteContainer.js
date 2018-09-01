@@ -3,7 +3,7 @@ import ReactAutocomplete from 'react-autocomplete';
 import classNames from 'classnames';
 import { connect } from 'react-redux';
 
-import { getAutocomplete } from '../../modules/autocomplete';
+import { getAutocomplete, resetAutocomplete } from '../../modules/autocomplete';
 
 class AutocompleteContainer extends React.Component {
   constructor(props) {
@@ -13,6 +13,7 @@ class AutocompleteContainer extends React.Component {
 
   componentDidMount(){
     this.myRef.current.focus();
+    this.props.resetAutocomplete();
     this.getAutocomplete();
   }
 
@@ -64,5 +65,6 @@ export default connect(
     mapStateToProps,
     {
         getAutocomplete,
+        resetAutocomplete,
     },
 )(AutocompleteContainer);
