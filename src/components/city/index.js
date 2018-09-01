@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 
 import Row from './row';
 
-const City = ({ cities, fetching, error }) => (
+export const City = ({ cities, fetching, error }) => (
   <div>
     <h1>City</h1>
     { error && <div className='error'>
