@@ -6,7 +6,7 @@ export const CITIES_REQUEST = 'CITIES_REQUEST';
 export const CITIES_FAILED = 'CITIES_FAILED';
 export const CITIES_SUCCESS = 'CITIES_SUCCESS';
 
-const initialState = {
+export const initialState = {
   fetching: false,
   data: [],
   error: null,
