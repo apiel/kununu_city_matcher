@@ -26,3 +26,7 @@ button:disabled {
 .highlighted {
   background: lightgray;
 }
+
+.error {
+  color: #F00;
+}

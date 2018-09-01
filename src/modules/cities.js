@@ -45,7 +45,8 @@ export const getCities = () => async (dispatch) => {
     dispatch({ type: CITIES_REQUEST });
     const { data } = await axios.get(api.cities);
     dispatch({ type: CITIES_SUCCESS, data });
-  } catch (error) {
+  } catch (err) {
+    const error = err.message || 'unknown error';
     dispatch({ type: CITIES_FAILED, error });
   }
 };
