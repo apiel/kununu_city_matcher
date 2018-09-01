@@ -13,6 +13,7 @@ class AutocompleteContainer extends React.Component {
 
   componentDidMount(){
     this.myRef.current.focus();
+    this.getAutocomplete();
   }
 
   requestTimer = null;
@@ -57,11 +58,11 @@ class AutocompleteContainer extends React.Component {
 
 const mapStateToProps = ({ autocomplete }) => ({
     items: autocomplete.data,
-  });
+});
 
-  export default connect(
+export default connect(
     mapStateToProps,
     {
         getAutocomplete,
     },
-  )(AutocompleteContainer);
+)(AutocompleteContainer);

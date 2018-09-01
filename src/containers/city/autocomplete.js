@@ -29,7 +29,6 @@ class Autocomplete extends React.Component {
             onFocus={ this.onFocus }
             value={ this.state.value }
             onChange={() => {}}
-            style={{background: '#eee'}}
         />);
   }
 }

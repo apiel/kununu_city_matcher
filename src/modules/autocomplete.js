@@ -43,7 +43,8 @@ export default (state = initialState, action) => {
 export const getAutocomplete = (query) => async (dispatch) => {
   try {
     dispatch({ type: AUTOCOMPLETE_REQUEST });
-    const { data } = await axios.get(`${api.autocomplete}${query}`);
+    const escapedQuery = query.replace(/[!@#$%^&*()+=\-[\]\\';,./{}|":<>?~_]/g, "\\$&");
+    const { data } = await axios.get(`${api.autocomplete}${escapedQuery}`);
     dispatch({ type: AUTOCOMPLETE_SUCCESS, data });
   } catch (error) {
     dispatch({ type: AUTOCOMPLETE_FAILED, error });
