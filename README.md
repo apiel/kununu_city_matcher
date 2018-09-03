@@ -18,3 +18,11 @@ I would have like to have:
 
 - eslint
 - flow
+
+
+
+Update:
+
+In components/city/autocomplete.js instead of switching between AutocompleteContainer and input, I should better switch between connected AutocompleteContainer and not connected AutocompleteContainer.
+
+Another options would have been to have one store by AutocompleteContainer but I think is a bit heavy. There might be other possibilties, maybe some libraries...
